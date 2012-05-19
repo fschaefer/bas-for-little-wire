@@ -1,0 +1,31 @@
+Bas is an interpreter for the classic dialect of the programming language
+BASIC.  It is pretty compatible to typical BASIC interpreters of the 1980s,
+unlike some other UNIX BASIC interpreters, that implement a different
+syntax, breaking compatibility to existing programs.  Bas offers many ANSI
+BASIC statements for structured programming, such as procedures, local
+variables and various loop types.  Further there are matrix operations,
+automatic LIST indentation and many statements and functions found in
+specific classic dialects.  Line numbers are not required.
+
+The interpreter tokenises the source and resolves references to variables
+and jump targets before running the program.  This compilation pass
+increases efficiency and catches syntax errors, type errors and references
+to variables that are never initialised.  Bas is written in ANSI C for
+UNIX systems.
+
+Please do "make check" after compiling bas to run a couple regression
+tests.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published
+by the Free Software Foundation; either version 2.1 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
+License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, write to the Free Software Foundation,
+Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.

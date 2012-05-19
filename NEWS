@@ -1,0 +1,23 @@
+Changes compared to version 2.1
+
+o  Extend floating point number syntax
+o  Fix tab() of a number larger than the output width not terminating
+o  Add "case is"
+o  Preformatted PDF version of the manual
+o  Ask for confirmation when ending bas with an unsaved program
+o  Remember program name given by load as default name for save
+o  Fix various formatting bugs in PRINT USING
+o  Add DO UNTIL..LOOP
+o  Fix LIST ranges not having to end at existing line numbers
+o  Fix LIST 1-10 not being parsed as expression
+o  Treat integer literal outside the integer range as floating point literal
+o  Handle hex and octal integer overflows
+o  Detect integer overflows upon explicit or implicit numeric conversions from
+   reals
+o  Add EXIT SUB and EXIT FUNCTION
+o  MAT PRINT advances to a new line, if not already at the beginning of a new line
+o  DIM checks for sufficient memory
+o  Fixed integer division
+o  New warning: "Too much input data"
+o  Close all files on NEW, CLEAR and RUN
+o  Do not print "Error: " on a user interrupt

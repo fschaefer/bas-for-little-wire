@@ -1366,7 +1366,7 @@ static struct Value *fn_lw_analogread(struct Value *v, struct Auto *stack) /*{{{
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  return Value_new_INTEGER(v,analogRead(lwHandle,intValue(stack,0)));
+  return Value_new_INTEGER(v,(unsigned int)analogRead(lwHandle,intValue(stack,0)));
 }
 /*}}}*/
 static struct Value *fn_lw_delay(struct Value *v, struct Auto *stack) /*{{{*/
@@ -1374,7 +1374,7 @@ static struct Value *fn_lw_delay(struct Value *v, struct Auto *stack) /*{{{*/
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  delay(intValue(stack,0));
+  delay((unsigned int)intValue(stack,0));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/
@@ -1383,7 +1383,7 @@ static struct Value *fn_lw_digitalread(struct Value *v, struct Auto *stack) /*{{
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  return Value_new_INTEGER(v,digitalRead(lwHandle,intValue(stack,0)));
+  return Value_new_INTEGER(v,(unsigned char)digitalRead(lwHandle,(unsigned char)intValue(stack,0)));
 }
 /*}}}*/
 static struct Value *fn_lw_digitalwrite(struct Value *v, struct Auto *stack) /*{{{*/
@@ -1391,7 +1391,7 @@ static struct Value *fn_lw_digitalwrite(struct Value *v, struct Auto *stack) /*{
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  digitalWrite(lwHandle,intValue(stack,0),intValue(stack,1));
+  digitalWrite(lwHandle,(unsigned char)intValue(stack,0),(unsigned char)intValue(stack,1));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/
@@ -1411,7 +1411,7 @@ static struct Value *fn_lw_pinmode(struct Value *v, struct Auto *stack) /*{{{*/
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  pinMode(lwHandle,intValue(stack,0),intValue(stack,1));
+  pinMode(lwHandle,(unsigned char)intValue(stack,0),(unsigned char)intValue(stack,1));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/
@@ -1438,7 +1438,7 @@ static struct Value *fn_lw_pwmupdatecompare(struct Value *v, struct Auto *stack)
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  pwm_updateCompare(lwHandle,intValue(stack,0),intValue(stack,1));
+  pwm_updateCompare(lwHandle,(unsigned char)intValue(stack,0),(unsigned char)intValue(stack,1));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/
@@ -1447,7 +1447,7 @@ static struct Value *fn_lw_pwmupdateprescaler(struct Value *v, struct Auto *stac
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  pwm_updatePrescaler(lwHandle,intValue(stack,0));
+  pwm_updatePrescaler(lwHandle,(unsigned int)intValue(stack,0));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/
@@ -1456,7 +1456,7 @@ static struct Value *fn_lw_i2cbegintransmission(struct Value *v, struct Auto *st
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  i2c_beginTransmission(lwHandle,intValue(stack,0));
+  i2c_beginTransmission(lwHandle,(unsigned char)intValue(stack,0));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/
@@ -1484,10 +1484,12 @@ static struct Value *fn_lw_i2crequestfrom(struct Value *v, struct Auto *stack) /
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
   
-  unsigned char responseBuffer[255];
-  Value_new_STRING(v);
-  String_size(&v->u.string,255);
-  i2c_requestFrom(lwHandle,intValue(stack,0),intValue(stack,1),v->u.string.character);
+  unsigned char address = (unsigned char)intValue(stack,0);
+  unsigned char len = (unsigned char)intValue(stack,1);
+
+  v = string(v,len,0);
+  i2c_requestFrom(lwHandle,address,len,v->u.string.character);
+
   return v;
 }
 /*}}}*/
@@ -1496,7 +1498,7 @@ static struct Value *fn_lw_i2csend(struct Value *v, struct Auto *stack) /*{{{*/
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  i2c_send(lwHandle,intValue(stack,0));
+  i2c_send(lwHandle,(unsigned char)intValue(stack,0));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/
@@ -1514,7 +1516,7 @@ static struct Value *fn_lw_servoupdatelocation(struct Value *v, struct Auto *sta
   if (lwHandle == NULL) {
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
-  servo_updateLocation(lwHandle,intValue(stack,0),intValue(stack,1));
+  servo_updateLocation(lwHandle,(unsigned char)intValue(stack,0),(unsigned char)intValue(stack,1));
   return Value_new_INTEGER(v,-1);
 }
 /*}}}*/

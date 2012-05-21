@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bas 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-15 21:37+0200\n"
+"POT-Creation-Date: 2012-05-21 08:59+0200\n"
 "PO-Revision-Date: 2002-11-09 18:26+0100\n"
 "Last-Translator: Michael Haardt <michael@moria.de>\n"
 "Language-Team: Deutsch <michael@moria.de>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -337,8 +338,8 @@ msgstr "`end if' ohne mehrzeiliges `if' oder `else'"
 #, c-format
 msgid "`subend', `end sub' or `endproc' without `sub' or `def proc' inside %s"
 msgstr ""
-"`subend', `end sub' oder `endproc' ohne `sub' oder `def proc' innerhalb von %"
-"s"
+"`subend', `end sub' oder `endproc' ohne `sub' oder `def proc' innerhalb von "
+"%s"
 
 #: error.h:64
 #, c-format
@@ -699,111 +700,111 @@ msgstr "Direkter Portzugriff ist nicht möglich"
 msgid "Direct memory access not available"
 msgstr "Direkter Speicherzugriff ist nicht möglich"
 
-#: getopt.c:681
+#: getopt.c:682
 #, c-format
 msgid "%s: option `%s' is ambiguous\n"
 msgstr "%s: Option `%s' ist mehrdeutig.\n"
 
-#: getopt.c:705
+#: getopt.c:706
 #, c-format
 msgid "%s: option `--%s' doesn't allow an argument\n"
 msgstr "%s: Option `--%s' erlaubt kein Argument.\n"
 
-#: getopt.c:710
+#: getopt.c:711
 #, c-format
 msgid "%s: option `%c%s' doesn't allow an argument\n"
 msgstr "%s: Option `%c%s' erlaubt kein Argument.\n"
 
-#: getopt.c:727 getopt.c:900
+#: getopt.c:728 getopt.c:901
 #, c-format
 msgid "%s: option `%s' requires an argument\n"
 msgstr "%s: Option `%s' benötigt ein Argument.\n"
 
 #. --option
-#: getopt.c:756
+#: getopt.c:757
 #, c-format
 msgid "%s: unrecognized option `--%s'\n"
 msgstr "%s: Unbekannte Option `--%s'\n"
 
 #. +option or -option
-#: getopt.c:760
+#: getopt.c:761
 #, c-format
 msgid "%s: unrecognized option `%c%s'\n"
 msgstr "%s: Unbekannte Option `%c%s'\n"
 
 #. 1003.2 specifies the format of this message.
-#: getopt.c:786
+#: getopt.c:787
 #, c-format
 msgid "%s: illegal option -- %c\n"
 msgstr "%s: Ungültige Option -- %c\n"
 
-#: getopt.c:789
+#: getopt.c:790
 #, c-format
 msgid "%s: invalid option -- %c\n"
 msgstr "%s: Ungültige Option -- %c\n"
 
 #. 1003.2 specifies the format of this message.
-#: getopt.c:819 getopt.c:949
+#: getopt.c:820 getopt.c:950
 #, c-format
 msgid "%s: option requires an argument -- %c\n"
 msgstr "%s: Option benötigt ein Argument -- %c\n"
 
-#: getopt.c:866
+#: getopt.c:867
 #, c-format
 msgid "%s: option `-W %s' is ambiguous\n"
 msgstr "%s: Option `-W %s' ist mehrdeutig\n"
 
-#: getopt.c:884
+#: getopt.c:885
 #, c-format
 msgid "%s: option `-W %s' doesn't allow an argument\n"
 msgstr "%s: Option `-W %s' erlaubt kein Argument\n"
 
-#: global.c:180 global.c:209 global.c:937 statement.c:1679
+#: global.c:186 global.c:215 global.c:943 statement.c:1679
 msgid "position"
 msgstr "Position"
 
-#: global.c:181 global.c:197 global.c:210 global.c:243 global.c:837
-#: global.c:859 global.c:882 global.c:992 global.c:1015 global.c:1096
-#: global.c:1151 global.c:1200 global.c:1210 global.c:1229 statement.c:1686
+#: global.c:187 global.c:203 global.c:216 global.c:249 global.c:843
+#: global.c:865 global.c:888 global.c:998 global.c:1021 global.c:1102
+#: global.c:1157 global.c:1206 global.c:1216 global.c:1235 statement.c:1686
 #: statement.c:1688
 msgid "length"
 msgstr "Länge"
 
-#: global.c:198
+#: global.c:204
 msgid "code"
 msgstr "Code"
 
-#: global.c:259
+#: global.c:265
 msgid "variable number"
 msgstr "Variablennummer"
 
-#: global.c:284
+#: global.c:290
 msgid "`asc' or `code' of empty string"
 msgstr "`asc' oder `code' von leerer Zeichenkette"
 
-#: global.c:304 global.c:319 global.c:339 global.c:425 global.c:435
-#: global.c:553 global.c:615 global.c:647 global.c:665 global.c:685
-#: global.c:702
+#: global.c:310 global.c:325 global.c:345 global.c:431 global.c:441
+#: global.c:559 global.c:621 global.c:653 global.c:671 global.c:691
+#: global.c:708
 msgid "number"
 msgstr "Zahl"
 
-#: global.c:329 global.c:341 global.c:675 global.c:687
+#: global.c:335 global.c:347 global.c:681 global.c:693
 msgid "digits"
 msgstr "Ziffern"
 
-#: global.c:349 global.c:1190 global.c:1212
+#: global.c:355 global.c:1196 global.c:1218
 msgid "character code"
 msgstr "Zeichencode"
 
-#: global.c:384 global.c:400
+#: global.c:390 global.c:406
 msgid "argument number"
 msgstr "Argumentnummer"
 
-#: global.c:743 global.c:773
+#: global.c:749 global.c:779
 msgid "time"
 msgstr "Zeit"
 
-#: global.c:758 global.c:775 statement.c:186 statement.c:1001 statement.c:1178
+#: global.c:764 global.c:781 statement.c:186 statement.c:1001 statement.c:1178
 #: statement.c:1354 statement.c:1558 statement.c:1815 statement.c:2162
 #: statement.c:2273 statement.c:2738 statement.c:2745 statement.c:2816
 #: statement.c:2964 statement.c:3722 statement.c:3844 statement.c:3878
@@ -811,24 +812,24 @@ msgstr "Zeit"
 msgid "channel"
 msgstr "Kanal"
 
-#: global.c:808 global.c:820 global.c:847 global.c:857 global.c:977
-#: global.c:1002 global.c:1013
+#: global.c:814 global.c:826 global.c:853 global.c:863 global.c:983
+#: global.c:1008 global.c:1019
 msgid "start"
 msgstr "Start"
 
-#: global.c:907
+#: global.c:913
 msgid "Logarithm of negative value"
 msgstr "Logarithmus von negativem Wert"
 
-#: global.c:1119 statement.c:2544
+#: global.c:1125 statement.c:2544
 msgid "limit"
 msgstr "Grenze"
 
-#: global.c:1160
+#: global.c:1166
 msgid "Square root argument"
 msgstr "Argument der Quadratwurzel"
 
-#: global.c:1218 global.c:1230
+#: global.c:1224 global.c:1236
 msgid "`string$' of empty string"
 msgstr "`string$' von leerer Zeichenkette"
 

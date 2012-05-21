@@ -1494,7 +1494,6 @@ static struct Value *fn_lw_i2crequestfrom(struct Value *v, struct Auto *stack) /
   if (len > RX_BUFFER_SIZE) len = RX_BUFFER_SIZE;
 
   i2c_requestFrom(lwHandle,address,len,buffer);
-  
   Value_new_STRING(v);
   String_appendChars(&v->u.string,buffer);
 
@@ -1508,6 +1507,15 @@ static struct Value *fn_lw_i2csend(struct Value *v, struct Auto *stack) /*{{{*/
   }
   i2c_send(lwHandle,(unsigned char)intValue(stack,0));
   return Value_new_INTEGER(v,-1);
+}
+/*}}}*/
+static struct Value *fn_lw_version(struct Value *v, struct Auto *stack) /*{{{*/
+{
+  if (lwHandle == NULL) {
+    return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
+  }
+  return Value_new_INTEGER(v,readFirmwareVersion(lwHandle));
+;
 }
 /*}}}*/
 static struct Value *fn_lw_servoinit(struct Value *v, struct Auto *stack) /*{{{*/
@@ -1759,6 +1767,7 @@ struct Global *Global_new(struct Global *this) /*{{{*/
   builtin(this,"pwmupdatecompare",      V_INTEGER,fn_lw_pwmupdatecompare,       2,V_INTEGER,V_INTEGER);
   builtin(this,"pwmupdateprescaler",    V_INTEGER,fn_lw_pwmupdateprescaler,     1,V_INTEGER);
   builtin(this,"pwmstop",               V_INTEGER,fn_lw_pwmstop,                0);
+  builtin(this,"littlewireversion",     V_INTEGER,fn_lw_version,                0);
   builtin(this,"servoinit",             V_INTEGER,fn_lw_servoinit,              0);
   builtin(this,"servoupdatelocation",   V_INTEGER,fn_lw_servoupdatelocation,    2,V_INTEGER,V_INTEGER);
   builtin(this,"spiinit",               V_INTEGER,fn_lw_spiinit,                0);

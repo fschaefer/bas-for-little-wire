@@ -6,6 +6,7 @@
 #include "var.h"
 
 #define GLOBAL_HASHSIZE 31
+#define BUFFER_SIZE 512
 
 struct GlobalFunctionChain
 {

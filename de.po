@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bas 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 12:59+0200\n"
+"POT-Creation-Date: 2012-05-21 14:45+0200\n"
 "PO-Revision-Date: 2002-11-09 18:26+0100\n"
 "Last-Translator: Michael Haardt <michael@moria.de>\n"
 "Language-Team: Deutsch <michael@moria.de>\n"
@@ -829,7 +829,7 @@ msgstr "Grenze"
 msgid "Square root argument"
 msgstr "Argument der Quadratwurzel"
 
-#: global.c:1224 global.c:1236
+#: global.c:1224 global.c:1236 global.c:1562
 msgid "`string$' of empty string"
 msgstr "`string$' von leerer Zeichenkette"
 

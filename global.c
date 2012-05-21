@@ -1484,14 +1484,19 @@ static struct Value *fn_lw_i2crequestfrom(struct Value *v, struct Auto *stack) /
     return Value_new_ERROR(v,IOERROROPEN,"Little Wire", "Little Wire could not be found!");
   }
   
+  unsigned char buffer[RX_BUFFER_SIZE];
   unsigned char address;
   unsigned char len;
 
   address = (unsigned char)intValue(stack,0);
   len = (unsigned char)intValue(stack,1);
+
+  if (len > RX_BUFFER_SIZE) len = RX_BUFFER_SIZE;
+
+  i2c_requestFrom(lwHandle,address,len,buffer);
   
-  v = string(v,len,0);
-  i2c_requestFrom(lwHandle,address,len,(unsigned char*)v->u.string.character);
+  Value_new_STRING(v);
+  String_appendChars(&v->u.string,buffer);
 
   return v;
 }

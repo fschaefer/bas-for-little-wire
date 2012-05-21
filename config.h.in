@@ -13,7 +13,7 @@
 /* Should we need to include curses.h? */
 #undef HAVE_CURSES_H
 
-/* Define this as 1 if your system has lrint(). */
+/* Should we need to include curl.h? */
 #undef HAVE_LRINT
 
 /* Define this as 1 if your system has nanosleep(). */
@@ -24,6 +24,9 @@
 
 /* Define as 1 if you use dmalloc. */
 #undef USE_DMALLOC
+
+/* Define as 1 if you want libcurl support. */
+#undef USE_LIBCURL
 
 /* Define as 1 if you want LR0 parser. */
 #undef USE_LR0

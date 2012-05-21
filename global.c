@@ -44,6 +44,52 @@
 
 littleWire* lwHandle = NULL;
 
+#ifdef USE_LIBCURL
+
+#include <curl/curl.h>
+ 
+static struct String *stringValue(struct Auto *stack, int l);
+
+static size_t curl_write_memory(void *contents, size_t size, size_t nmemb, void *userp)
+{
+  struct String *mem = (struct String *)userp;
+ 
+  String_appendChars(mem,(char*)contents);
+ 
+  return size * nmemb;
+}
+
+static struct Value *fn_curl_get(struct Value *v, struct Auto *stack) /*{{{*/
+{
+  
+  struct String *url;
+  struct String content; 
+  CURL *curl_handle;
+
+  url = stringValue(stack,0);
+  String_new(&content);
+ 
+  Value_new_STRING(v);
+ 
+  curl_global_init(CURL_GLOBAL_ALL);
+  curl_handle = curl_easy_init();
+  curl_easy_setopt(curl_handle, CURLOPT_URL, url->character);
+  curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, curl_write_memory);
+  curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&content);
+  curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
+ 
+  curl_easy_perform(curl_handle);
+ 
+  curl_easy_cleanup(curl_handle);
+  curl_global_cleanup();
+
+  String_appendString(&v->u.string,&content);
+  return v;
+}
+/*}}}*/
+
+#endif
+
 extern char **environ;
 
 static int wildcardmatch(const char *a, const char *pattern) /*{{{*/
@@ -1759,7 +1805,11 @@ struct Global *Global_new(struct Global *this) /*{{{*/
   builtin(this,"spiinit",               V_INTEGER,fn_lw_spiinit,                0);
   builtin(this,"spisendmessage",        V_INTEGER,fn_lw_spisendmessage,         1,V_INTEGER);
   builtin(this,"spiupdatedelay",        V_INTEGER,fn_lw_spiupdatedelay,         1,V_INTEGER);
-  
+
+#ifdef USE_LIBCURL
+  builtin(this,"get$",  V_STRING, fn_curl_get,     1,V_STRING);
+#endif
+
   return this;
 }
 /*}}}*/

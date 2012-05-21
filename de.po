@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bas 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 08:59+0200\n"
+"POT-Creation-Date: 2012-05-21 12:28+0200\n"
 "PO-Revision-Date: 2002-11-09 18:26+0100\n"
 "Last-Translator: Michael Haardt <michael@moria.de>\n"
 "Language-Team: Deutsch <michael@moria.de>\n"
@@ -759,52 +759,52 @@ msgstr "%s: Option `-W %s' ist mehrdeutig\n"
 msgid "%s: option `-W %s' doesn't allow an argument\n"
 msgstr "%s: Option `-W %s' erlaubt kein Argument\n"
 
-#: global.c:186 global.c:215 global.c:943 statement.c:1679
+#: global.c:232 global.c:261 global.c:989 statement.c:1679
 msgid "position"
 msgstr "Position"
 
-#: global.c:187 global.c:203 global.c:216 global.c:249 global.c:843
-#: global.c:865 global.c:888 global.c:998 global.c:1021 global.c:1102
-#: global.c:1157 global.c:1206 global.c:1216 global.c:1235 statement.c:1686
+#: global.c:233 global.c:249 global.c:262 global.c:295 global.c:889
+#: global.c:911 global.c:934 global.c:1044 global.c:1067 global.c:1148
+#: global.c:1203 global.c:1252 global.c:1262 global.c:1281 statement.c:1686
 #: statement.c:1688
 msgid "length"
 msgstr "Länge"
 
-#: global.c:204
+#: global.c:250
 msgid "code"
 msgstr "Code"
 
-#: global.c:265
+#: global.c:311
 msgid "variable number"
 msgstr "Variablennummer"
 
-#: global.c:290
+#: global.c:336
 msgid "`asc' or `code' of empty string"
 msgstr "`asc' oder `code' von leerer Zeichenkette"
 
-#: global.c:310 global.c:325 global.c:345 global.c:431 global.c:441
-#: global.c:559 global.c:621 global.c:653 global.c:671 global.c:691
-#: global.c:708
+#: global.c:356 global.c:371 global.c:391 global.c:477 global.c:487
+#: global.c:605 global.c:667 global.c:699 global.c:717 global.c:737
+#: global.c:754
 msgid "number"
 msgstr "Zahl"
 
-#: global.c:335 global.c:347 global.c:681 global.c:693
+#: global.c:381 global.c:393 global.c:727 global.c:739
 msgid "digits"
 msgstr "Ziffern"
 
-#: global.c:355 global.c:1196 global.c:1218
+#: global.c:401 global.c:1242 global.c:1264
 msgid "character code"
 msgstr "Zeichencode"
 
-#: global.c:390 global.c:406
+#: global.c:436 global.c:452
 msgid "argument number"
 msgstr "Argumentnummer"
 
-#: global.c:749 global.c:779
+#: global.c:795 global.c:825
 msgid "time"
 msgstr "Zeit"
 
-#: global.c:764 global.c:781 statement.c:186 statement.c:1001 statement.c:1178
+#: global.c:810 global.c:827 statement.c:186 statement.c:1001 statement.c:1178
 #: statement.c:1354 statement.c:1558 statement.c:1815 statement.c:2162
 #: statement.c:2273 statement.c:2738 statement.c:2745 statement.c:2816
 #: statement.c:2964 statement.c:3722 statement.c:3844 statement.c:3878
@@ -812,24 +812,24 @@ msgstr "Zeit"
 msgid "channel"
 msgstr "Kanal"
 
-#: global.c:814 global.c:826 global.c:853 global.c:863 global.c:983
-#: global.c:1008 global.c:1019
+#: global.c:860 global.c:872 global.c:899 global.c:909 global.c:1029
+#: global.c:1054 global.c:1065
 msgid "start"
 msgstr "Start"
 
-#: global.c:913
+#: global.c:959
 msgid "Logarithm of negative value"
 msgstr "Logarithmus von negativem Wert"
 
-#: global.c:1125 statement.c:2544
+#: global.c:1171 statement.c:2544
 msgid "limit"
 msgstr "Grenze"
 
-#: global.c:1166
+#: global.c:1212
 msgid "Square root argument"
 msgstr "Argument der Quadratwurzel"
 
-#: global.c:1224 global.c:1236
+#: global.c:1270 global.c:1282
 msgid "`string$' of empty string"
 msgstr "`string$' von leerer Zeichenkette"
 
